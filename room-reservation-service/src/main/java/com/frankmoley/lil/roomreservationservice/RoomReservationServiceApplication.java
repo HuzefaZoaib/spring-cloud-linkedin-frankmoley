@@ -1,5 +1,6 @@
 package com.frankmoley.lil.roomreservationservice;
 
+import brave.sampler.Sampler;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -23,4 +24,9 @@ public class RoomReservationServiceApplication {
         return new RestTemplate();
     }
 
+    @Bean
+    // creating a sampler called always sampler
+    public Sampler defaultSampler() {
+        return Sampler.ALWAYS_SAMPLE;
+    }
 }
