@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(value = "guest-service", fallback = GuestServiceFallback.class)
+@FeignClient(value = "api-gateway-service", fallback = GuestServiceFallback.class)
 public interface GuestServiceClient {
 
     final static String GUESTS_URL_PART = "/guests";
